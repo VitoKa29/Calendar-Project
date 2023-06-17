@@ -12,7 +12,8 @@ if (isset($_GET["bulan"])) {
     $bulan = date("F");
 }
 
-$sql = mysqli_query($conn,"SELECT * FROM event WHERE MONTHNAME(tanggal_mulai) = '$bulan' AND status = 'Archived' AND username = '$username'");
+$sql = mysqli_query($conn,"SELECT * FROM event WHERE MONTHNAME(tanggal_mulai) = '$bulan' AND status = 'Archived' AND username = '$username' ORDER BY tanggal_mulai ASC");
+$count = mysqli_num_rows($sql);
 $no = 1;
 ?>
 
@@ -45,7 +46,10 @@ $no = 1;
           <th>Action</th>
         </thead>
         <tbody>
-            <?php while ($data = mysqli_fetch_assoc($sql)) {
+            <?php 
+              if ($count) {
+                while ($data = mysqli_fetch_assoc($sql)) {
+              
                 
              ?>
           <tr>
@@ -61,7 +65,20 @@ $no = 1;
           </tr>
           <?php 
             $no++;
-            } ?>
+            } }else{
+              ?>
+              <tr>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>
+              --
+            </td>
+          </tr>
+            <?php }?>
         </tbody>
       </table>
 
