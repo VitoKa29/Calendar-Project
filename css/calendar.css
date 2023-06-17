@@ -489,6 +489,39 @@ h4.notask span {
   padding-top: 100px;
 }
 
+/* Edit Button */
+.createbutton {
+  color: black;
+  transition: all 0.4s;
+  transform: scale3d(1, 1, 1);
+}
+
+.createbutton:hover {
+  color: #00b074;
+}
+
+/* Delete Button */
+.createbutton_hapus {
+  color: black;
+  transition: all 0.4s;
+  transform: scale3d(1, 1, 1);
+}
+
+.createbutton_hapus:hover {
+  color: #fc2947;
+}
+
+/* Archived Button */
+.createbutton_arsip {
+  color: black;
+  transition: all 0.4s;
+  transform: scale3d(1, 1, 1);
+}
+
+.createbutton_arsip:hover {
+  color: #30a2ff;
+}
+
 /* COMMENT */
 .comment,
 .comment-tambah {

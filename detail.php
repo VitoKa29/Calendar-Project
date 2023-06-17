@@ -54,8 +54,8 @@ $data = $db->view_detail($_GET["id"]);
           </div>
           
           <button id="update" class="createbutton"  type="update" value="Create" style="float: right;margin-top: 535px;margin-right: 20px;font-size: larger;font-weight: 600;"><i class="i" data-feather="edit"></i></button>
-          <a href = 'crud.php?aksi=hapus_event&id=<?php echo $data["id_event"]; ?>' onclick = 'return hapus()' id="delete" class="createbutton" style="float: right;margin-top: 535px;margin-right: 20px;font-size: larger;font-weight: 600;"><i class="i" data-feather="trash-2"></i></a>
-          <a href = 'crud.php?aksi=arsip_event&id=<?php echo $data["id_event"]; ?>' onclick = 'return arsip()' id="archive" class="createbutton" style="float: right;margin-top: 535px;margin-right: 20px;font-size: larger;font-weight: 600;"><i class="i" data-feather="folder"></i></a>
+          <a href = 'crud.php?aksi=hapus_event&id=<?php echo $data["id_event"]; ?>' onclick = 'return hapus()' id="delete" class="createbutton_hapus" style="float: right;margin-top: 535px;margin-right: 20px;font-size: larger;font-weight: 600;"><i class="i" data-feather="trash-2"></i></a>
+          <a href = 'crud.php?aksi=arsip_event&id=<?php echo $data["id_event"]; ?>' onclick = 'return arsip()' id="archive" class="createbutton_arsip" style="float: right;margin-top: 535px;margin-right: 20px;font-size: larger;font-weight: 600;"><i class="i" data-feather="folder"></i></a>
 
           <div class="user-ans-tambah">
             <div class="dates-tambah">
