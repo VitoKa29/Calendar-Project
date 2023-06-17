@@ -13,6 +13,16 @@ error_reporting(0);
             case "detail" :
                 include "detail.php";
             break;
+
+            case "task_view" :
+                include "task_view.php";
+            break;
+
+            case "profile" :
+                include "profile.php";
+            break;
+
+            
             
         }
     }

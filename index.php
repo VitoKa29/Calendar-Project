@@ -30,6 +30,7 @@ if( empty($username) ){
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/calendar.css" />
+    <link rel="stylesheet" href="css/table_view.css" />
 
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
@@ -70,15 +71,15 @@ if( empty($username) ){
             </a>
           </li>
           <li>
-            <a href="#" id="icon">
+            <a href="index.php?page=profile" id="icon">
               <i class="fas fa-user"></i>
               <span class="nav-item">Profile</span>
             </a>
           </li>
           <li>
-            <a href="#" id="icon">
+            <a href="index.php?page=task_view" id="icon">
               <i class="fas fa-tasks"></i>
-              <span class="nav-item">Task</span>
+              <span class="nav-item">Archived Task</span>
             </a>
           </li>
           <li>

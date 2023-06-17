@@ -35,7 +35,7 @@
  🏫 &emsp; We are from Duta Wacana Christian University <br/><br/>
  💻 &emsp; We are doing a web programming project <br/><br/>
  📅 &emsp; This project creates a calendar todo list <br/><br/>
- 📝 &emsp; This app enables users to log their daily activities online.
+ 📝 &emsp; This app enables users to log their daily activities online
 
 </p>
 
