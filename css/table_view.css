@@ -65,7 +65,7 @@ tbody tr td {
 }
 
 tr:nth-child(odd) {
-  background-color: #c6c7cc;
+  background-color: #e0e1e2;
 }
 
 .high {
