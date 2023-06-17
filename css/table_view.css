@@ -1,9 +1,26 @@
+/* import google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  position: absolute;
+  top: 50px;
+  right: 41%;
+  text-align: center;
+  margin-top: 70px;
+  margin-left: 100px;
+  z-index: 2;
+}
+
 .dropdown_calendar {
   position: relative;
   font-size: 30px;
   font-weight: bolder;
   margin: auto;
-  margin-top: 80px;
+  margin-top: 135px;
   margin-left: 340px;
   background-color: #e3e4e9;
   text-overflow: ellipsis;
@@ -12,8 +29,8 @@
 
 .table_taskview {
   margin: auto;
-  margin-top: 150px;
-  margin-left: -165px;
+  margin-top: 200px;
+  margin-left: -195px;
   text-align: center;
   border: 1px;
   border-spacing: 0;
@@ -53,12 +70,18 @@ tr:nth-child(odd) {
 
 .high {
   color: #f44336; /* Merah */
+  background-color: #f44336; /* Merah */
+  border-radius: 50%;
 }
 
 .medium {
   color: #ff9800; /* Oranye */
+  background-color: #ff9800; /* Merah */
+  border-radius: 50%;
 }
 
 .low {
   color: #00b074; /* Hijau */
+  background-color: #00b074; /* Merah */
+  border-radius: 50%;
 }
