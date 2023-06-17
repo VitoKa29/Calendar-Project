@@ -7,14 +7,21 @@ Penjelasan singkat : Aplikasi ini berfungsi untuk membantu user mencatat kegiata
 Daftar Anggota :
 
 Nathanael Vito Kristianto (71210681)
+
 Farrel Ardiyanto Saputro (71210702)
+
 Stefaron Budhi Santosa (71210800)
 
 Daftar Fungsi :
 
 Login
+
 menambah kegiatan
+
 mengubah kegiatan
+
 melihat kegiatan
+
 menghapus kegiatan
+
 mengarsip kegiatan
