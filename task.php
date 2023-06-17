@@ -44,7 +44,7 @@ if ($cek) {
               <p class='description'>$data[title]</p>
             </div>
             <div class='detail-icon'>
-              <a href='index.php?page=detail' id='detail-icon'>
+              <a href='index.php?page=detail&id=$data[id_event]' id='detail-icon'>
                 <i class='i' data-feather='info'></i>
               </a>
             </div>
