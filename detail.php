@@ -1,19 +1,30 @@
+<?php
+
+include "koneksi.php";
+
+include 'proses.php';
+$db = new database();
+
+$data = $db->view_detail($_GET["id"]);
+
+
+?>
+
 <!-- awal detail task -->
 <div class="detail-task">
         <!-- awal header -->
-        <form action="crud.php?aksi=input" method="POST" enctype="multipart/form-data">
+        <form action="crud.php?aksi=update" method="POST" enctype="multipart/form-data">
         <div id="task-head">
           <h1>
             <input
               type="text"
               id="text-input"
               name="title"
-              placeholder="Title Task"
+              value = "<?php echo $data["title"]; ?>"
               required
             />
           </h1>
         </div>
-
         <!-- akhir header -->
 
         <!-- awal detail content -->
@@ -36,7 +47,7 @@
                   cols="50"
                   rows="3"
                   style="margin-left: 18px"
-                ></textarea
+                ><?php echo $data["comment"]; ?></textarea
                 ><br />
             </div>
           </div>
@@ -51,7 +62,7 @@
                     type="date"
                     id="from"
                     name="tanggal_mulai"
-                    placeholder="From"
+                    value = "<?php echo $data['tanggal_mulai']; ?>"
                     required
                   /><br /><br />
               </div>
@@ -64,6 +75,7 @@
                     type="date"
                     id="until"
                     name="tanggal_selesai"
+                    value = "<?php echo $data["tanggal_selesai"]; ?>"
                     placeholder="Until"
                   /><br /><br />
               </div>
@@ -72,21 +84,22 @@
             <div class="time-tambah">
               <div class="time-from-tambah">
                   <label for="time"></label>
-                  <input type="time" id="jam" name="jam_mulai" required/>
+                  <input type="time" id="jam" name="jam_mulai" value = "<?php echo $data["jam_mulai"]; ?>" required/>
               </div>
 
               <span>--></span>
 
               <div class="time-until-tambah">
                   <label for="time"></label>
-                  <input type="time" id="jam" name="jam_selesai" />
+                  <input type="time" id="jam" name="jam_selesai" value = "<?php echo $data["jam_selesai"]; ?>"/>
               </div>
               <span>WIB</span>
             </div>
 
             <div class="file-media-tambah">
-                <label for="myFile">Pilih file:</label>
-                <input type="file" id="myFile" name="upload" />
+              <img src="<?php echo $data["gambar"] ?>" alt="aktifitas_kelas" width="200" height="200"/><br>
+              <label for="myFile">Pilih file:</label>
+              <input type="file" id="myFile" name="upload" />
             </div>
 
             <div class="notes-tambah">
@@ -96,11 +109,13 @@
                   id="comment"
                   name="notes"
                   placeholder="Add a notes.."
+                  value = "<?php echo $data["notes"]; ?>"
                 /><br /><br />
             </div>
 
             <div class="type-tambah" style=" margin-top: 3px">
               <select name="priority" required>
+                <option value="<?php echo $data["priority"]; ?>"><?php echo ucfirst($data["priority"]); ?></option>
                 <option value="high">High</option>
                 <option value="medium">Medium</option>
                 <option value="low">Low</option>

@@ -13,17 +13,6 @@ class database{
 	function __construct(){
 		$this->conn = mysqli_connect($this->host, $this->uname, $this->pass, $this->db) or die("Koneksi Gagal");
 	}
- 
-	function tampil_data_ruang(){
-		$sql = mysqli_query(" SELECT * FROM jadwalkuliah inner join matakuliah on jadwalkuliah.idMtk = matakuliah.idMtk
-								inner join ruangan on jadwalkuliah.nomorRuang = ruangan.nomorRuang
-								inner join sesi on jadwalkuliah.kodeSesi = sesi.kodeSesi
-		 ");
-		while($data = mysqli_fetch_array($sql)){
-			$hasil[] = $data;
-		}
-		return $hasil;
-	}
 	function tampil_data_dipinjam(){
 		$sql = mysqli_query(" SELECT * FROM peminjaman inner join mahasiswa on peminjaman.nim = mahasiswa.nim
 								inner join ruangan on peminjaman.nomorRuang = ruangan.nomorRuang
@@ -37,7 +26,14 @@ class database{
 	function profile($username){
 
 		$sql = mysqli_query(" SELECT * FROM admin WHERE username = '$username' ");
-		$hasil[] = $data = mysqli_fetch_array($sql);
+		$hasil[] = $data = mysqli_fetch_assoc($sql);
+		
+		return $hasil;
+	}
+	function view_detail($id){
+
+		$sql = mysqli_query($this->conn," SELECT * FROM event WHERE id_event = '$id' ");
+		$hasil = mysqli_fetch_assoc($sql);
 		
 		return $hasil;
 	}
