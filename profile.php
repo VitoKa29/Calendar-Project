@@ -1,16 +1,27 @@
+<?php
+
+include "koneksi.php";
+
+$sql = mysqli_query($conn,"SELECT * FROM user WHERE username = '$username'");
+$data = mysqli_fetch_assoc($sql);
+
+
+?>
+
 <head>
     <link rel="stylesheet" href="css/profile.css">
 </head>
     <div class="box">
-      <img src="user/sova-dp.jpeg" alt="Profile Picture" class="Profile-pic">
+      <img src="<?php echo $data["gambar_profile"]; ?>" alt="Profile Picture" class="Profile-pic">
       <form
-        action="crud.php?aksi=registrasi"
+        action="crud.php?aksi=update_profile"
         method="POST"
         enctype="multipart/form-data"
       >
-        <input type="text" placeholder="Username" name="username" />
-        <input type="text" placeholder="Name" name="nama" />
-        <input type="date" placeholder="Date Birth" name="tanggal_lahir" />
+        <input type="text" placeholder="Username" value="<?php echo $data["username"]; ?>" disabled/>
+        <input type="hidden" name="username" value="<?php echo $data["username"]; ?>"/>
+        <input type="text" placeholder="Name" name="nama" value="<?php echo $data["nama"]; ?>"/>
+        <input type="date" placeholder="Date Birth" name="tanggal_lahir" value="<?php echo $data["tanggal_lahir"]; ?>"/>
         <input
           class="customFileInput"
           type="file"

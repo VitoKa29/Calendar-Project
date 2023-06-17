@@ -228,6 +228,60 @@ class database{
 		}
 	}
 
+	function update_profile($username,$nama,$tanggal_lahir,$gambar){
+		if ($gambar) {
+			$ext = strtolower(pathinfo($_FILES["upload"]["name"], PATHINFO_EXTENSION));
+        		$arr = ["jpg","jpeg","png"];
+
+				
+
+        		if (in_array($ext, $arr)) {
+				
+        		    if (($_FILES["upload"]["size"]/1024000) <= 10) {
+					
+        		        $upload_file = "user/".$_FILES["upload"]["name"];
+
+						move_uploaded_file($_FILES["upload"]["tmp_name"],$upload_file);
+
+						mysqli_query($this->conn, "UPDATE user SET nama='$nama',tanggal_lahir='$tanggal_lahir',gambar_profile='user/$gambar' WHERE username = '$username'
+			");
+				echo"
+		        <script>
+		            alert('Data Berhasil Diupdate');
+		            window.location.href='index.php?page=profile';
+		        </script>
+		        ";
+        		    }else {
+						echo"
+		        		<script>
+		        		    alert('Ukuran File tidak boleh lebih dari 10 MB');
+		        		    window.location.href='index.php?page=profile';
+		        		</script>
+		        		";
+        		    }
+				
+        		}else {
+					echo"
+		        	<script>
+		        	    alert('File yang diupload bukan jpg/jpeg/png');
+		        	    window.location.href='index.php?page=profile';
+		        	</script>
+		        	";
+    	    	}  
+
+
+		}else{
+			mysqli_query($this->conn, "UPDATE user SET nama='$nama',tanggal_lahir='$tanggal_lahir' WHERE username = '$username'
+			");
+				echo"
+		        <script>
+		            alert('Data Berhasil Diupdate');
+		            window.location.href='index.php?page=profile';
+		        </script>
+		        ";
+		}
+	}
+
 	function input($username,$title,$tanggal_mulai,$tanggal_selesai,$jam_mulai,$jam_selesai,$gambar,$notes,$priority,$comment){
 
 			if ($tanggal_mulai >= $tanggal_selesai && !empty($tanggal_selesai)) {

@@ -31,5 +31,8 @@ elseif($aksi == "arsip_event"){
 }elseif($aksi == "update_event"){
  	$db->update_event( $_POST['id'], $_POST['title'],$_POST['tanggal_mulai'],$_POST['tanggal_selesai'],$_POST['jam_mulai'],$_POST['jam_selesai'],$_FILES["upload"]["name"],$_POST['notes'],$_POST['priority'],$_POST['comment'] );
  	
+}elseif($aksi == "update_profile"){
+ 	$db->update_profile( $_POST['username'], $_POST['nama'],$_POST['tanggal_lahir'],$_FILES["upload"]["name"]);
+ 	
 }
 ?>
