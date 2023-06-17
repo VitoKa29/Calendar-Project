@@ -13,7 +13,7 @@ Stefaron Budhi Santosa (71210800)
 Daftar Fungsi :
 
 Login
-menambah kegiatan 
+menambah kegiatan
 mengubah kegiatan
 melihat kegiatan
 menghapus kegiatan

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calender</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/calendar.css" />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <div class="icon">
+          <li>
+            <a href="#" class="logo" id="icon">
+              <img src="p-img.png" alt="Profile Picture" />
+              <span class="nav-item">Calendar</span>
+            </a>
+          </li>
+          <li>
+            <a href="index.html" id="icon">
+              <i class="fas fa-home"></i>
+              <span class="nav-item">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="icon">
+              <i class="fas fa-user"></i>
+              <span class="nav-item">Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="icon">
+              <i class="fas fa-tasks"></i>
+              <span class="nav-item">Task</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="icon">
+              <i class="fas fa-cog"></i>
+              <span class="nav-item">Setting</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="icon">
+              <i class="fas fa-question-circle"></i>
+              <span class="nav-item">Help</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="logout" id="icon">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Log Out</span>
+            </a>
+          </li>
+        </div>
+      </ul>
+    </nav>
+
+    <!-- awal detail task -->
+    <div class="detail-task">
+      <!-- awal header -->
+      <div id="task-head">
+        <h1>
+          <input type="text" id="text-input" name="nama" placeholder="Title Task"></h1>
+      </div>
+      <!-- akhir header -->
+
+      <!-- awal detail content -->
+      <div class="content">
+        <div class="component">
+          <p><i class="i" data-feather="calendar"></i><span>Dates</span></p>
+          <p><i class="i" data-feather="file"></i><span>File/Media</span></p>
+          <p><i class="i" data-feather="align-justify"></i><span>Notes</span></p>
+          <p><i class="i" data-feather="pocket"></i><span>Status</span></p>
+          <p><i class="i" data-feather="tag"></i><span>Type</span></p>
+          <div class="comment">
+            <img src="p-img.png" alt="logo-profile">
+            <form>
+              <label for="comment"></label>
+              <input type="text" id="comment" name="comment" placeholder="Add a comment..." /><br /><br />
+            </form>
+          </div>
+        </div>
+
+          <div class="user-ans">
+            <div class="dates">
+              <div id="from">
+                <form>
+                  <label for="from"></label>
+                  <input type="text" id="from" name="from" placeholder="From" /><br /><br />
+                </form>
+              </div>
+
+              <span></span>
+
+              <div id="until">
+                <form>
+                  <label for="until"></label>
+                  <input type="text" id="until" name="until" placeholder="Until" /><br /><br />
+                </form>
+              </div>
+            </div>
+
+            <div class="file-media">
+              <form>
+                <label for="myFile">Pilih file:</label>
+                <input type="file" id="myFile" name="myFile" />
+              </form>
+            </div>
+
+            <div class="notes">
+              <form>
+                <label for="notes"></label>
+                <input type="text" id="comment" name="comment" placeholder="Add a notes.." /><br /><br />
+              </form>
+            </div>
+
+            <div class="status">
+              <select>
+                <option value="option1">To Do</option>
+                <option value="option2">On Progress</option>
+                <option value="option3">Done</option>
+              </select>
+            </div>
+
+            <div class="type">
+              <select>
+                <option value="option1">Penting</option>
+                <option value="option2">Sangat Penting</option>
+                <option value="option3">Biasa Saja</option>
+              </select>
+            </div>
+
+          </div>
+        
+      </div>
+
+    <footer>
+      <p>&copy; 2023 The Big Three. All rights reserved</p>
+    </footer>
+    <!-- Feather Icons -->
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
