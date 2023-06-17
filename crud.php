@@ -6,7 +6,7 @@ $db = new database();
 session_start();
  
 $aksi = $_GET['aksi'];
- if($aksi == "input"){
+if($aksi == "input"){
  	$db->input( $_SESSION["username"], $_POST['title'],$_POST['tanggal_mulai'],$_POST['tanggal_selesai'],$_POST['jam_mulai'],$_POST['jam_selesai'],$_FILES["upload"]["name"],$_POST['notes'],$_POST['priority'],$_POST['comment'] );
  	
 }elseif($aksi == "registrasi"){
@@ -20,10 +20,13 @@ elseif($aksi == "tambah_pemakaian_ruang"){
 elseif($aksi == "tambah_peminjaman_ruang"){
 	$db->tambah_peminjaman_ruang($_POST['nim'],$_POST['ruangan'],$_POST['sesi'],$_POST['tanggal'],$_POST['keterangan']);
 }
-elseif($aksi == "hapus_pemakaian_ruang"){
-	$db->hapus_pemakaian_ruang($_GET['matkul'],$_GET['tahun'],$_GET['semester'],$_GET['grup']);
+elseif($aksi == "hapus_event"){
+	$db->hapus_event($_GET['id']);
 }
-elseif($aksi == "hapus_peminjaman_ruang"){
-	$db->hapus_peminjaman_ruang($_GET['nim'],$_GET['ruangan'],$_GET['sesi']);
+elseif($aksi == "arsip_event"){
+	$db->arsip_event($_GET['id']);
+}elseif($aksi == "update_event"){
+ 	$db->update_event( $_POST['id'], $_POST['title'],$_POST['tanggal_mulai'],$_POST['tanggal_selesai'],$_POST['jam_mulai'],$_POST['jam_selesai'],$_FILES["upload"]["name"],$_POST['notes'],$_POST['priority'],$_POST['comment'] );
+ 	
 }
 ?>

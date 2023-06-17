@@ -5,7 +5,7 @@ include "koneksi.php";
 session_start();
 $username = $_SESSION["username"];
 
-$sql = mysqli_query($conn, "SELECT * FROM event WHERE DAY(tanggal_mulai) = '$awal' AND MONTHNAME(tanggal_mulai) = '$bulan' AND username = '$username'
+$sql = mysqli_query($conn, "SELECT * FROM event WHERE DAY(tanggal_mulai) = '$awal' AND MONTHNAME(tanggal_mulai) = '$bulan' AND username = '$username' AND status = 'ToDo'
                 ORDER BY CASE 
                     WHEN priority = 'high' THEN 1 
                     WHEN priority = 'medium' THEN 2 

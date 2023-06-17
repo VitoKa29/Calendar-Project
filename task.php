@@ -24,7 +24,7 @@ if (isset($_GET["bulan"]) && isset($_GET["tanggal"])) {
 <?php  
 
 
-$sql = mysqli_query($conn, "SELECT * FROM event WHERE DAY(tanggal_mulai) = '$tanggal' AND MONTHNAME(tanggal_mulai) = '$bulan' AND username = '$username'
+$sql = mysqli_query($conn, "SELECT * FROM event WHERE DAY(tanggal_mulai) = '$tanggal' AND MONTHNAME(tanggal_mulai) = '$bulan' AND username = '$username' AND status = 'ToDo'
                     ORDER BY CASE 
                     WHEN priority = 'high' THEN 1 
                     WHEN priority = 'medium' THEN 2 
