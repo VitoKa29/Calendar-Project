@@ -30,7 +30,7 @@
 # About Us & Project
 
 <p>
- <img align="right" width="350" src="/assets/giphy.gif" alt="Coding gif" />
+ <img align="right" width="360" src="/assets/giphy.gif" alt="Coding gif" />
   
  🏫 &emsp; We are from University Kristen Duta Wacana <br/><br/>
  💻 &emsp; We are doing a web programming project <br/><br/>
