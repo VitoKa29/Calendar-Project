@@ -230,7 +230,7 @@ class database{
 
 	function input($username,$title,$tanggal_mulai,$tanggal_selesai,$jam_mulai,$jam_selesai,$gambar,$notes,$priority,$comment){
 
-			if ($tanggal_mulai >= $tanggal_selesai) {
+			if ($tanggal_mulai >= $tanggal_selesai && !empty($tanggal_selesai)) {
 				echo"
 		        		<script>
 		        		    alert('Jam mulai tidak boleh sama dengan jam selesai');
