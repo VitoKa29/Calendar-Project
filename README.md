@@ -9,16 +9,13 @@
         </samp>
 </h3>
 
-
 <p align="center"> 
   <samp>
     <a style="font-color:#2f81f7">「 Our Team 」</a>
     <br>
         「 <a href="https://www.instagram.com/nathanael_vitok/">Nathanael Vito Kristianto </a><b>(71210681)</b> 」
     <br>
-    <br>
         「 <a href="https://www.instagram.com/farrelsaputro/">Farrel Ardiyanto Saputro </a><b>(71210702)</b> 」
-    <br>
     <br>
         「 <a href="https://www.instagram.com/stefaron_evan/">Stefaron Budhi Santosa </a><b>(71210800)</b> 」
     <br>
@@ -29,15 +26,16 @@
 <br />
 
 <!-- About Section -->
- # About Us & Project
- 
+
+# About Us & Project
+
 <p>
  <img align="right" width="350" src="/assets/giphy.gif" alt="Coding gif" />
   
- 🏫 &emsp; We are informatics college students from Universtiy Kristen Duta Wacana <br/><br/>
+ 🏫 &emsp; We are from University Kristen Duta Wacana <br/><br/>
  💻 &emsp; We are doing a web programming project <br/><br/>
  📅 &emsp; This project creates a calendar todo list <br/><br/>
- 📝 &emsp; This application serves to help users record their daily activities via the web platform.
+ 📝 &emsp; This app enables users to log their daily activities online.
 
 </p>
 
@@ -55,4 +53,3 @@
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
 <br/>
-
