@@ -49,7 +49,7 @@ if( empty($username) ){
     <header class="header">
       <a href="#" class="logo-header">
         <img src="img/p-img.png" alt="Profile Picture" />
-        <span class="header-text"><a href="index.html">Calendar</a></span>
+        <span class="header-text"><a href="index.php">Calendar</a></span>
       </a>
     </header>
 
