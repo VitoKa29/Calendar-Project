@@ -79,6 +79,19 @@ class database{
 
 		
 	}
+	function hapus_arsip($id){
+		
+		mysqli_query($this->conn," DELETE FROM event WHERE id_event = '$id' ");
+		echo"
+    <script>
+        alert('Data Berhasil Dihapus');
+        window.location.href='index.php?page=task_view';
+    </script>
+    
+    ";  
+		
+		
+	}
 	function arsip_event($id){
 		
 			mysqli_query($this->conn," UPDATE event SET status = 'Archived' WHERE id_event = '$id' ");
@@ -90,7 +103,6 @@ class database{
     
     ";  
 		
-
 		
 	}
 	function registrasi($username,$password,$nama,$tanggal_lahir,$gambar_profile){

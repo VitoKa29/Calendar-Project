@@ -30,7 +30,6 @@ if( empty($username) ){
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/calendar.css" />
-    <link rel="stylesheet" href="css/table_view.css" />
 
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>

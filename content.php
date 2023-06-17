@@ -14,6 +14,11 @@ error_reporting(0);
                 include "detail.php";
             break;
 
+            case "detail_task_view" :
+                include "detail_task_view.php";
+            break;
+
+
             case "task_view" :
                 include "task_view.php";
             break;

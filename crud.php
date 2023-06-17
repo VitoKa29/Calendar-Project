@@ -23,6 +23,9 @@ elseif($aksi == "tambah_peminjaman_ruang"){
 elseif($aksi == "hapus_event"){
 	$db->hapus_event($_GET['id']);
 }
+elseif($aksi == "hapus_arsip"){
+	$db->hapus_arsip($_GET['id']);
+}
 elseif($aksi == "arsip_event"){
 	$db->arsip_event($_GET['id']);
 }elseif($aksi == "update_event"){
