@@ -5,13 +5,13 @@
 
 <h3 align="center">
         <samp>&gt; Hey There!, We are
-                <b style="font-color:#2f81f7">Holy Team</b>
+                <b style="color:#2f81f7">Holy Team</b>
         </samp>
 </h3>
 
 <p align="center"> 
   <samp>
-    <a style="font-color:#2f81f7">「 Our Team 」</a>
+    <a>「 Our Team 」</a>
     <br>
         「 <a href="https://www.instagram.com/nathanael_vitok/">Nathanael Vito Kristianto </a><b>(71210681)</b> 」
     <br>
