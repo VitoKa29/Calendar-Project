@@ -28,17 +28,17 @@ $data = $db->view_detail($_GET["id"]);
         <!-- akhir header -->
 
         <!-- awal detail content -->
-        <div class="content-tambah">
+        <div class="content-tambah" style="height: 620px">
           <div class="component-tambah">
             <p><i class="i" data-feather="calendar"></i><span>Dates</span></p>
             <p><i class="i" data-feather="clock"></i><span>Time</span></p>
-            <p><i class="i" data-feather="file"></i><span>File/Media</span></p>
-            <p>
+            <p style="margin-top:75px"><i class="i" data-feather="file"></i><span>File/Media</span></p>
+            <p style="margin-top:120px">
               <i class="i" data-feather="align-justify"></i><span>Notes</span>
             </p>
             <p><i class="i" data-feather="tag"></i><span>Priority</span></p>
 
-            <div class="comment-tambah" style="margin-top: 14px">
+            <div class="comment-tambah">
               <img src="<?php echo $gambar; ?>" alt="logo-profile" />
                 <textarea
                   id="comment"
@@ -52,7 +52,9 @@ $data = $db->view_detail($_GET["id"]);
             </div>
           </div>
           
-          <button id="submit" class="createbutton"  type="submit" value="Create" style="float: right;margin-top: 427px;margin-right: 20px;font-size: larger;font-weight: 600;">Create</button>
+          <button id="update" class="createbutton"  type="update" value="Create" style="float: right;margin-top: 535px;margin-right: 20px;font-size: larger;font-weight: 600;"><i class="i" data-feather="edit"></i></button>
+          <a id="delete" class="createbutton" style="float: right;margin-top: 535px;margin-right: 20px;font-size: larger;font-weight: 600;"><i class="i" data-feather="trash-2"></i></a>
+          <a id="archive" class="createbutton" style="float: right;margin-top: 535px;margin-right: 20px;font-size: larger;font-weight: 600;"><i class="i" data-feather="folder"></i></a>
 
           <div class="user-ans-tambah">
             <div class="dates-tambah">
@@ -97,7 +99,7 @@ $data = $db->view_detail($_GET["id"]);
             </div>
 
             <div class="file-media-tambah">
-              <img src="<?php echo $data["gambar"] ?>" alt="aktifitas_kelas" width="200" height="200"/><br>
+              <img src="<?php echo $data["gambar"] ?>" alt="aktifitas_kelas" width="auto" height="200"/><br>
               <label for="myFile">Pilih file:</label>
               <input type="file" id="myFile" name="upload" />
             </div>
@@ -123,26 +125,5 @@ $data = $db->view_detail($_GET["id"]);
             </div>
           </div>
         </div>
-        </form>
+      </form>
       </div>
-
-<script>
-$('#submit').on('click', function(){
-  var mulai = new Date($('#tanggal_mulai').val());
-  var selesai = new Date($('#tanggal_selesai').val());
-  var tgl_mulai = mulai.getDate();
-  var tgl_selesai = selesai.getDate();
-  var bulan_mulai = date.getMonth() + 1;
-  var tahun_mulai = date.getFullYear();
-
-  $.ajax({
-        type: 'post',
-        url: 'test.php',
-        data: {tgl_mulai : tgl_mulai, tgl_selesai : tgl_selesai, bulan_mulai : bulan_mulai, tahun_mulai : tahun_mulai},
-        success: function (res) {
-
-        }
-    });
-
-});
-</script>
