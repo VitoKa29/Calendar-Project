@@ -11,6 +11,7 @@ $data = mysqli_fetch_assoc($sql);
 <head>
     <link rel="stylesheet" href="css/profile.css">
 </head>
+  <h1>Profile</h1>
     <div class="box">
       <img src="<?php echo $data["gambar_profile"]; ?>" alt="Profile Picture" class="Profile-pic">
       <form

@@ -14,6 +14,16 @@ body {
   background: #e3e4e9;
 }
 
+h1 {
+  position: absolute;
+  top: 30px;
+  right: 47.2%;
+  text-align: center;
+  margin-top: 70px;
+  margin-left: 100px;
+  z-index: 2;
+}
+
 .Profile-pic {
   width: 100px;
   height: 100px;
@@ -23,7 +33,7 @@ body {
 
 .container {
   width: 100%;
-  height: 100vh;
+  height: 96.5vh;
   position: relative;
 }
 
