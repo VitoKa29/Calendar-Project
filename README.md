@@ -5,7 +5,7 @@
 
 <h3 align="center">
         <samp>&gt; Hey There!, We are
-                <b style="color:#2f81f7">Holy Team</b>
+                <a href="">Holy Team</a>
         </samp>
 </h3>
 
@@ -32,7 +32,7 @@
 <p>
  <img align="right" width="360" src="/assets/giphy.gif" alt="Coding gif" />
   
- 🏫 &emsp; We are from University Kristen Duta Wacana <br/><br/>
+ 🏫 &emsp; We are from Duta Wacana Christian University <br/><br/>
  💻 &emsp; We are doing a web programming project <br/><br/>
  📅 &emsp; This project creates a calendar todo list <br/><br/>
  📝 &emsp; This app enables users to log their daily activities online.
