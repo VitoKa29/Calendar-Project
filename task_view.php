@@ -60,7 +60,7 @@ $no = 1;
             <td><?php echo $data["notes"]; ?></td>
             <td><i class="<?php echo $data["priority"]; ?>" data-feather="circle"></i></td>
             <td>
-              <a href="index.php?page=detail_task_view&id=<?php echo $data["id_event"]; ?>" id="detail-icon"><i data-feather="info"></i></a>
+              <a title='Info' href="index.php?page=detail_task_view&id=<?php echo $data["id_event"]; ?>" id="detail-icon"><i data-feather="info"></i></a>
             </td>
           </tr>
           <?php 

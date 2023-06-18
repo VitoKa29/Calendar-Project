@@ -53,7 +53,7 @@ $data = $db->view_detail($_GET["id"]);
             </div>
           </div>
           
-          <a href = 'crud.php?aksi=hapus_arsip&id=<?php echo $data["id_event"]; ?>' onclick = 'return hapus()' id="delete" class="createbutton_hapus" style="float: right;margin-top: 535px;margin-right: 20px;font-size: larger;font-weight: 600;"><i class="i" data-feather="trash-2"></i></a>
+          <a title="Delete" href = 'crud.php?aksi=hapus_arsip&id=<?php echo $data["id_event"]; ?>' onclick = 'return hapus()' id="delete" class="createbutton_hapus" style="float: right;margin-top: 535px;margin-right: 20px;font-size: larger;font-weight: 600;"><i class="i" data-feather="trash-2"></i></a>
 
           <div class="user-ans-tambah">
             <div class="dates-tambah">

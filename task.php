@@ -15,7 +15,7 @@ if (isset($_GET["bulan"]) && isset($_GET["tanggal"])) {
   <h5 class="today-task"><?php echo "$bulan $tanggal"; ?>, 2023</h5>
   <h2>My Task</h2>
   <div class="add-newtask">
-    <a href="?page=add_task" id="newtask">
+    <a title="Add Task" href="?page=add_task" id="newtask">
       <i class="i" data-feather="plus"></i>
     </a>
   </div>
@@ -44,7 +44,7 @@ if ($cek) {
               <p class='description'>$data[title]</p>
             </div>
             <div class='detail-icon'>
-              <a href='index.php?page=detail&id=$data[id_event]' id='detail-icon'>
+              <a title='Info' href='index.php?page=detail&id=$data[id_event]' id='detail-icon'>
                 <i class='i' data-feather='info'></i>
               </a>
             </div>
