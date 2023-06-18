@@ -27,33 +27,35 @@ class database{
 		
 		return $hasil;
 	}
-	function login($username,$password){
-        $sql = mysqli_query($this->conn, "SELECT * FROM user WHERE username = '$username' AND password = '$password' ");
-		$cek = mysqli_num_rows($sql);
-		$data = mysqli_fetch_array($sql);
-			
-		session_start();
-		$_SESSION["nama"] = $data["nama"];
-		$_SESSION["username"] = $data["username"];
-		$_SESSION["gambar"] = $data["gambar_profile"];
-			
-		if( $cek ) {
-		    echo"
-		    <script>
-		        alert('Login Berhasil');
-		        window.location.href='index.php';
-		    </script>
-		
-		    ";  
-		}else{
-		    echo"
-		    <script>
-		        alert('Maaf, Username atau Password yang anda inputkan salah');
-		        window.location.href='login.php';
-		    </script>
-		    ";
-		}
-	}
+	function login($username, $password) {
+    	$username = mysqli_real_escape_string($this->conn, $username);
+    	$password = mysqli_real_escape_string($this->conn, $password);
+
+    	$sql = mysqli_query($this->conn, "SELECT * FROM user WHERE BINARY username = '$username' AND BINARY password = '$password'");
+    	$cek = mysqli_num_rows($sql);
+    	$data = mysqli_fetch_array($sql);
+
+    	$_SESSION["nama"] = $data["nama"];
+    	$_SESSION["username"] = $data["username"];
+    	$_SESSION["gambar"] = $data["gambar_profile"];
+
+    	if ($cek) {
+    	    echo "
+    	    <script>
+    	        alert('Login Berhasil');
+    	        window.location.href='index.php';
+    	    </script>
+    	    ";
+    	} else {
+    	    echo "
+    	    <script>
+    	        alert('Maaf, Username atau Password yang anda inputkan salah');
+    	        window.location.href='login.php';
+    	    </script>
+    	    ";
+    	}
+}
+
 	function hapus_event($id){
 		$sql = mysqli_query($this->conn," SELECT * FROM event WHERE id_event = '$id' ");
 		$data = mysqli_fetch_assoc($sql);
@@ -105,73 +107,64 @@ class database{
 		
 		
 	}
-	function registrasi($username,$password,$nama,$tanggal_lahir,$gambar_profile){
-
-
-		$sql = mysqli_query($this->conn, "SELECT * FROM user WHERE username = '$username' ");
-		$cek = mysqli_num_rows($sql);
-			
-			
-		if( $cek ) {
-		    echo"
-		    <script>
-		        alert('Maaf, Username Sudah Terdaftar');
-		        window.location.href='daftar.html';
-		    </script>
+	function registrasi($username, $password, $nama, $tanggal_lahir, $gambar_profile) {
+    	$username = mysqli_real_escape_string($this->conn, $username);
+    	$password = mysqli_real_escape_string($this->conn, $password);
 		
-		    ";  
-		}else{
-			if (!(empty($gambar_profile))) {
-       
-        		$ext = strtolower(pathinfo($_FILES["upload"]["name"], PATHINFO_EXTENSION));
-        		$arr = ["jpg","jpeg","png"];
-
-        		if (in_array($ext, $arr)) {
-				
-        		    if (($_FILES["upload"]["size"]/1024000) <= 10) {
-					
-        		        $upload_file = "user/".$_FILES["upload"]["name"];
-
-						move_uploaded_file($_FILES["upload"]["tmp_name"],$upload_file);			
-        		        mysqli_query($this->conn, "INSERT INTO user(username,password,nama,tanggal_lahir,gambar_profile) VALUES('$username','$password','$nama','$tanggal_lahir','$upload_file')");
-						
-        		         echo"
-		        		<script>
-		        		    alert('Pendaftaran Akun Berhasil');
-		        		    window.location.href='login.php';
-		        		</script>
-		        		";
-        		    }else {
-						echo"
-		        		<script>
-		        		    alert('Ukuran File tidak boleh lebih dari 10 MB');
-		        		    window.location.href='daftar.html';
-		        		</script>
-		        		";
-        		    }
-				
-        		}else {
-					echo"
-		        	<script>
-		        	    alert('File yang diupload bukan gambar');
-		        	    window.location.href='daftar.html';
-		        	</script>
-		        	";
-    	    	}       
-    		}else {
-    		    mysqli_query($this->conn, "INSERT INTO user(username,password,nama,tanggal_lahir,gambar_profile) VALUES('$username','$password','$nama','$tanggal_lahir','user/guest.png')");
-				echo"
-		        <script>
-		            alert('Pendaftaran Akun Berhasil');
-		            window.location.href='login.php';
-		        </script>
-		        ";
-    		}
+    	$sql = mysqli_query($this->conn, "SELECT * FROM user WHERE BINARY username = '$username'");
+    	$cek = mysqli_num_rows($sql);
 		
-		        
-				
-		}	
-	}
+    	if ($cek) {
+    	    echo "
+    	    <script>
+    	        alert('Maaf, Username Sudah Terdaftar');
+    	        window.location.href='daftar.html';
+    	    </script>
+    	    ";
+    	} else {
+    	    if (!empty($gambar_profile)) {
+    	        $ext = strtolower(pathinfo($_FILES["upload"]["name"], PATHINFO_EXTENSION));
+    	        $arr = ["jpg", "jpeg", "png"];
+			
+    	        if (in_array($ext, $arr)) {
+    	            if (($_FILES["upload"]["size"] / 1024000) <= 10) {
+    	                $upload_file = "user/" . $_FILES["upload"]["name"];
+    	                move_uploaded_file($_FILES["upload"]["tmp_name"], $upload_file);
+    	                mysqli_query($this->conn, "INSERT INTO user(username, password, nama, tanggal_lahir, gambar_profile) VALUES('$username', '$password', '$nama', '$tanggal_lahir', '$upload_file')");
+    	                echo "
+    	                <script>
+    	                    alert('Pendaftaran Akun Berhasil');
+    	                    window.location.href='login.php';
+    	                </script>
+    	                ";
+    	            } else {
+    	                echo "
+    	                <script>
+    	                    alert('Ukuran File tidak boleh lebih dari 10 MB');
+    	                    window.location.href='daftar.html';
+    	                </script>
+    	                ";
+    	            }
+    	        } else {
+    	            echo "
+    	            <script>
+    	                alert('File yang diupload bukan gambar');
+    	                window.location.href='daftar.html';
+    	            </script>
+    	            ";
+    	        }
+    	    } else {
+    	        mysqli_query($this->conn, "INSERT INTO user(username, password, nama, tanggal_lahir, gambar_profile) VALUES('$username', '$password', '$nama', '$tanggal_lahir', 'user/guest.png')");
+    	        echo "
+    	        <script>
+    	            alert('Pendaftaran Akun Berhasil');
+    	            window.location.href='login.php';
+    	        </script>
+    	        ";
+    	    }
+    	}
+}
+
 	function update_event($id,$title,$tanggal_mulai,$tanggal_selesai,$jam_mulai,$jam_selesai,$gambar,$notes,$priority,$comment){
 		if ($gambar) {
 			$ext = strtolower(pathinfo($_FILES["upload"]["name"], PATHINFO_EXTENSION));
