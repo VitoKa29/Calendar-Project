@@ -52,13 +52,14 @@ if( !empty($username) ){
       <div class="box">
         <h1>Login</h1>
         <form action="crud.php?aksi=login" method="POST">
-          <input type="text" name="username" placeholder="Username" />
+          <input type="text" name="username" placeholder="Username" required/>
           <div class="inputPassword">
             <input
               type="password"
               placeholder="Password"
               name="password"
               id="password"
+              required
             />
             <i class="bi bi-eye-slash" id="togglePassword"></i>
           </div>

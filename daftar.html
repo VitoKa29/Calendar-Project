@@ -33,13 +33,14 @@
           method="POST"
           enctype="multipart/form-data"
         >
-          <input type="text" placeholder="Username" name="username" />
+          <input type="text" placeholder="Username" name="username" required />
           <div class="inputPassword">
             <input
               type="password"
               placeholder="Password"
               name="password"
               id="password"
+              required
             />
             <i class="bi bi-eye-slash" id="togglePassword"></i>
           </div>
@@ -59,8 +60,13 @@
               this.classList.toggle("bi-eye");
             });
           </script>
-          <input type="text" placeholder="Name" name="nama" />
-          <input type="date" placeholder="Date Birth" name="tanggal_lahir" />
+          <input type="text" placeholder="Name" name="nama" required />
+          <input
+            type="date"
+            placeholder="Date Birth"
+            name="tanggal_lahir"
+            required
+          />
           <input
             class="customFileInput"
             type="file"
